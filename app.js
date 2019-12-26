@@ -7,7 +7,7 @@ const setMiddleWares = require('./middlewares/middlewares');
 
 const app = express();
 
-const MONGODB_URI = `mongodb://${process.env.DB_ADMIN}:${process.env.DB_PASSWORD}@ds159036.mlab.com:59036/blogdb`;
+const MONGODB_URI = `mongodb://pavel123:pass123@ds159036.mlab.com:59036/blogdb`;
 setMiddleWares(app);
 
 app.set("view engine", "ejs");
@@ -44,6 +44,7 @@ mongoose
   .then(() => {
     app.listen(PORT, () => {
       console.log(`port is running at ${PORT} and connection established`);
+      
     });
   })
   .catch(err => {
