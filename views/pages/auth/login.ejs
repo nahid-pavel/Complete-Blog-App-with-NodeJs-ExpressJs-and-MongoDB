@@ -1,0 +1,37 @@
+<%- include('../partials/header.ejs')%>
+
+<div class="container my-3" id="my-container">
+<div class="row">
+ <div class="col-md-6 offset-md-3">
+ <div class="card card-body">
+  <h3><%= title %>%></h3>
+  <form action="/auth/login" method="POST">
+    
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" name="email" class="form-control <%= error.email ? 'is-invalid': ''%> "  placeholder="Enter Email">
+     <div class="invalid-feedback">
+          <%= error.email %>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" name="password" class="form-control <%= error.password ? 'is-invalid': ''%>"  placeholder="Enter Password">
+     <div class="invalid-feedback">
+          <%= error.password %>
+      </div>
+  </div>
+  <input type="submit"  class="btn btn-primary" value="Login" />
+  
+  <p class="lead text-center my-3"><a href="/auth/signup">No account? Create A New Account</a></p>
+</form>
+</div>
+</div>
+</div>
+</div>
+    
+
+<%- include('../partials/footer.ejs')%>
+</div>
+</html>
+

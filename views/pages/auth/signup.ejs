@@ -1,0 +1,54 @@
+<%- include('../partials/header.ejs')%>
+
+<div class="container my-3" id="my-container">
+<div class="row">
+ <div class="col-md-6 offset-md-3">
+ <div class="card card-body">
+  <h3><%= title %></h3>
+  <form action="/auth/signup" method="POST">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" name="username" class="form-control <%= error.username ? 'is-invalid': ''%>"  placeholder="Enter Username" value="<%=values.username?values.username:''%>">
+      <div class="invalid-feedback">
+          <%= error.username %>
+      </div>
+    </div>
+  <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" name="email" class="form-control  <%= error.email? 'is-invalid': ''%>"  placeholder="Enter Email"value="<%=values.email?values.email:''%>">
+      <div class="invalid-feedback">
+          <%= error.email %>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" name="password" class="form-control  <%= error.password ? 'is-invalid': ''%>"  placeholder="Enter Password" value="<%=values.password?values.password:''%>">
+    <div class="invalid-feedback">
+         <%= error.password %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password_confirm">Confirm Password</label>
+    <input type="password" name="password_confirm" class="form-control <%= error.password_confirm ? 'is-invalid': ''%>"  placeholder="Confirm Password">
+    <div class="invalid-feedback">
+         <%= error.password_confirm %>
+    </div>
+  </div>
+  <input type="submit"  class="btn btn-primary" value="Submit" />
+  <p class="lead text-center my-3"><a href="/auth/login">Already have account? Click to Login</a></p>
+</form>
+</div>
+</div>
+</div>
+</div>
+    
+
+<%- include('../partials/footer.ejs')%>
+</div>
+</html>
+
+
+
+      
+    
+  
