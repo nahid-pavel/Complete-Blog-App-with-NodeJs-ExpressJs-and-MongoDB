@@ -38,7 +38,7 @@ app.use((error,req,res,next)=>{
 PORT = process.env.PORT || 5000;
 
 mongoose
-  .connect(MONGODB_URI, {
+  .connect(process.env.MONGODB_URI || MONGODB_URI, {
     useNewUrlParser: true
   })
   .then(() => {
